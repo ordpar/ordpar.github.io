@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordpar — Norwegian–English dictionary</title>
+<meta name="description" content="Ordpar: a Norwegian–English dictionary built on Bokmålsordboka. Every article, in English where the translation is authored and in Norwegian where it is not.">
+<meta name="robots" content="index,follow">
+<!--ORDPAR_HEAD-->
+<!-- the head script: sitegen/head.py THEME_JS, one copy (decisions 63), the file
+     /site/theme.js since 2026-10-20 -->
+<!--ORDPAR_HEADJS-->
+<!-- the results show whole articles (site decisions 59): the article page's own sheets,
+     then the shell's, which wins where the two meet — one file since 2026-10-20
+     (/site/shell-pages.css: article.css, inflection.css, shell.css) -->
+<link rel="stylesheet" href="/site/shell-pages.css">
+<!--ORDPAR_STRINGS-->
+</head>
+<body class="ordpar">
+<!-- the header: sitegen/chrome.py, one source for every page (decisions 63) -->
+<!--ORDPAR_HEADER-->
+
+<main id="ordpar-main" class="ordpar-main ordpar-main--cards" tabindex="-1">
+  <p class="ordpar-visually-hidden" data-ordpar-live role="status" aria-live="polite"></p>
+  <div data-ordpar-results></div>
+</main>
+
+<!-- the footer: sitegen/chrome.py (decisions 63) -->
+<!--ORDPAR_FOOTER-->
+
+<script src="/site/inflection.js" defer></script>
+<script src="/site/article.js" defer></script>
+<script src="/site/mini.js" defer></script>
+<!-- personal.js, lookup.js, ahead.js, offline.js, install.js, shell.js and personal-page.js, in
+     that order, one file since 2026-10-20 (ahead.js and personal-page.js since decisions 92) -->
+<script src="/site/shell-pages.js"></script>
+<script>
+/* The search page: #q=<word> answered from the index, in place — no reload, so focus can
+   return to the search box (accessibility baseline, plan § 1.1). The search is in the address's
+   FRAGMENT, which the browser never sends to a server (decisions 104, R2); an old ?q=<word>
+   address is still read, and rewritten to #q= at once (lookup.js `fragmentAddress`). */
+(function () {
+  'use strict';
+  var main = document.getElementById('ordpar-main');
+  ordparSearch.fragmentAddress();
+
+  function title(q) {
+    document.title = q ? q + ' — ' + ordparShell.t('site.name')
+                       : ordparShell.t('site.name') + ' — ' + ordparShell.t('site.tagline');
+  }
+
+  // `record`: a search the reader made — it goes into the history when it finds something
+  // (brief 60b); back and forward re-answer without recording. `drawn`: a Random word draw,
+  // answered but not recorded nor sent (decisions 115), its entry marked so a reload of it
+  // stays a draw (`ordparSearch.takeDrawn`)
+  function run(q, push, record, drawn) {
+    if (push) {
+      var url = q ? ordparLookup.searchUrl(q) : location.pathname;
+      history.pushState(drawn ? { q: q, random: true } : { q: q }, '', url);
+    }
+    title(q);
+    var box = document.getElementById('ordpar-q');
+    if (box && box.value !== q) { box.value = q; }   // back/forward keeps the box in step
+    ordparSearch.render(main, q, { record: !!record });
+  }
+
+  window.addEventListener('popstate', function () {
+    var q = ordparSearch.queryFromLocation();
+    run(q, false, false);
+  });
+
+  // a link to a search on this page (a "Similar headwords" link, `/bm-en/#q=<word>`) only moves
+  // the fragment, so the browser would not load the page again: it is answered here as the
+  // search the reader made (recorded), as a new page's first load would be
+  ordparSearch.wireFragmentLinks(function (q) { window.scrollTo(0, 0); run(q, true, true); });
+
+  // the page reached by Back / Forward from another page (an article page, say) reloads when
+  // the browser kept no copy of it: that is not a search the reader made either
+  function arrivedByHistory() {
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      return !!nav && nav.type === 'back_forward';
+    } catch (e) { return false; }
+  }
+
+  function start() {
+    ordparShell.setSearchHandler(function (q, how) {
+      var drawn = !!(how && how.random);
+      run(q, true, !drawn, drawn);
+    });
+    // the first load from #q= is a search: the article page's search box and a suggestion
+    // chosen there, a "Recent" or /history/ entry, a "Similar headwords" link from the 404
+    // shell all arrive here (an old ?q= address too) — but not a Random word draw from another
+    // page, nor the reload of a drawn search (decisions 115)
+    var drawn = ordparSearch.takeDrawn();
+    run(ordparSearch.queryFromLocation(), false, !drawn && !arrivedByHistory());
+  }
+
+  function whenReady() {
+    (window.ordparShell.ready || Promise.resolve()).then(start);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', whenReady);
+  } else {
+    whenReady();
+  }
+}());
+</script>
+</body>
+</html>

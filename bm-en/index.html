@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordpar — Norwegian–English dictionary</title>
+<meta name="description" content="Ordpar: a Norwegian–English dictionary built on Bokmålsordboka. Every article, in English where the translation is authored and in Norwegian where it is not.">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#6b0f2e">
+<!-- the head script: sitegen/head.py THEME_JS, one copy (decisions 63), the file
+     /site/theme.js since 2026-10-20 -->
+<script src="/site/theme.js?v=de263b48f5"></script>
+<!-- the results show whole articles (site decisions 59): the article page's own sheets,
+     then the shell's, which wins where the two meet — one file since 2026-10-20
+     (/site/shell-pages.css: article.css, inflection.css, shell.css) -->
+<link rel="stylesheet" href="/site/shell-pages.css?v=e7ad2b20d0">
+<script>window.ORDPAR_STRINGS={"en":{
+  "lang.name": "English",
+  "site.name": "Ordpar",
+  "site.tagline": "Norwegian–English dictionary",
+  "nav.skip": "Skip to the search",
+  "nav.home": "Front page",
+  "nav.current": "current page",
+  "nav.favourites": "Favourites",
+  "nav.skipArticle": "Skip to the article",
+  "nav.header": "Site",
+  "footer.nav": "Site links",
+  "footer.home": "Home",
+  "footer.settings": "Settings",
+  "footer.favourites": "Favourites",
+  "footer.history": "History",
+  "footer.privacy": "Privacy",
+  "privacy.contents": "On this page",
+  "footer.feedback": "Tell us what you think →",
+
+  "search.label": "Search a Norwegian word",
+  "search.placeholder": "Search a Norwegian word",
+  "search.submit": "Search",
+  "search.clear": "Clear the search box",
+  "search.random": "Random word",
+  "search.suggestions": "Suggestions",
+  "suggest.more": "+ {n} more",
+  "search.suggestionsHint": "{n} suggestions. Use the arrow keys to choose one.",
+  "search.tooManyWords": "That looks like a sentence — search one word at a time.",
+  "search.wordTooLong": "That word is too long to be a headword.",
+  "recent.title": "Recent",
+  "recent.all": "History",
+  "recent.label": "Recent searches",
+
+  "tag.translated": "translated",
+  "tag.norwegianOnly": "Norwegian only",
+
+  "results.searching": "Searching …",
+  "results.dictionary": "Bokmål–English dictionary",
+  "results.inflected": "“{q}” is an inflected form of:",
+  "results.count": "{n} articles",
+  "results.countOne": "1 article",
+  "results.none": "Could not find “{q}”.",
+  "results.noneWhy": "It may be a compound (Norwegian builds them without limit), a misspelling, or an article whose translation we have not reached yet — every Bokmål article is on this site, in Norwegian where the English is not authored.",
+  "results.similar": "Similar headwords",
+  "results.homograph": "homograph {n}",
+  "results.loading": "Loading …",
+  "results.copyLink": "Copy link",
+  "results.copied": "Link copied",
+  "results.share": "Share",
+  "results.articlePage": "Article page",
+  "change.sentence": "We corrected {changes} in this article.",
+  "change.and": "and",
+  "change.link": "Bokmålsordboka's article on ordbokene.no",
+  "change.xref.one": "a cross-reference",
+  "change.xref.many": "cross-references",
+  "change.sentence.headorder": "We put the more common spelling of the headword first.",
+  "change.sentence.headorder_and": "We put the more common spelling of the headword first and corrected {changes} in this article.",
+  "change.typo.one": "a typo",
+  "change.typo.many": "typos",
+  "change.form.one": "a word form",
+  "change.form.many": "word forms",
+  "change.punct.one": "a punctuation or formatting error",
+  "change.punct.many": "punctuation or formatting errors",
+  "change.compounds.one": "a list of compounds",
+  "change.compounds.many": "lists of compounds",
+  "change.fragment.one": "a stray fragment of text",
+  "change.fragment.many": "stray fragments of text",
+  "change.misplaced.one": "a misplaced passage",
+  "change.misplaced.many": "misplaced passages",
+  "change.setphrase.one": "a duplicated set phrase",
+  "change.setphrase.many": "duplicated set phrases",
+  "change.wordclass.one": "the word class",
+  "change.wordclass.many": "the word class",
+  "change.anchor.one": "a duplicated link target",
+  "change.anchor.many": "duplicated link targets",
+  "change.damage.one": "a damaged passage",
+  "change.damage.many": "damaged passages",
+  "fav.label": "Favourite",
+  "fav.saved": "In favourites",
+  "results.untranslated": "Not yet translated",
+  "results.empty": "Type a Norwegian word to search the dictionary.",
+  "results.liveHits": "{n} articles for “{q}”.",
+  "results.liveHitsOne": "1 article for “{q}”.",
+  "results.liveNone": "No articles for “{q}”.",
+
+  "notfound.title": "Page not found",
+  "notfound.body": "We could not find “{path}”.",
+  "notfound.home": "Go to the front page",
+
+  "settings.open": "Settings",
+  "settings.title": "Settings",
+  "settings.back": "Back",
+  "settings.jump": "Sections of the settings",
+  "settings.noscript": "The settings need JavaScript: they are kept in this browser's storage.",
+  "settings.section.style": "Style",
+  "settings.section.article": "Article",
+  "settings.section.search": "Search",
+  "settings.section.data": "Loading, offline and your data",
+  "settings.sub.language": "Language",
+  "settings.sub.inflection": "Inflection",
+  "settings.sub.xref": "Cross-references",
+  "settings.sub.mini": "Small articles",
+  "settings.sub.loading": "Loading",
+  "settings.colour": "Colour",
+  "settings.applied": "Changes apply at once and are kept in this browser.",
+  "settings.hintButton": "About this setting: {title}",
+  "settings.theme": "Theme",
+  "settings.theme.system": "Follow the device",
+  "settings.theme.light": "Light",
+  "settings.theme.dark": "Dark",
+  "settings.lang": "Interface language",
+  "settings.layout": "Article layout",
+  "settings.layout.ordpar": "Ordpar",
+  "settings.layout.ordbokene": "Closer to ordbokene.no",
+  "settings.layout.ordbokene.note": "Familiar if you use ordbokene.no. An \"Example\" heading over each sense's examples, and the examples set flush under it.",
+  "settings.xref": "What a click opens",
+  "settings.xref.mini": "Open as a small article on the page",
+  "settings.xref.page": "Open the full article page",
+  "settings.defs": "Definitions",
+  "settings.defs.both": "Norwegian and English",
+  "settings.defs.en": "English",
+  "settings.defs.en.note": "The shortest articles, for when you only need the meaning.",
+  "settings.defs.no": "Norwegian, with the English hidden until revealed",
+  "settings.defs.no.note": "For when you mostly follow the Norwegian: the English stays hidden until you need it.",
+  "settings.examples": "Examples",
+  "settings.examples.both": "Norwegian and English",
+  "settings.examples.no": "Norwegian, with the English hidden until revealed",
+  "settings.examples.no.note": "For practising your Norwegian: read the example first, then reveal the English to check yourself.",
+  "settings.exlimit": "Examples under each sense",
+  "settings.exlimit.all": "All",
+  "settings.exlimit.hint": "Fewer examples make a long article quicker to skim. Each sense and subsense shows its first examples, in the article's order, our added ones (+) included. With a number chosen, the setting below decides whether the rest can still be opened.",
+  "settings.exmore": "The line to show the rest",
+  "settings.exmore.on": "On",
+  "settings.exmore.off": "Off",
+  "settings.exmore.hint": "On: under a sense whose examples were cut, a line such as \"Show 12 more examples\" opens the rest in place. Off: the rest are not shown.",
+  "settings.emph": "Emphasis, when both languages show",
+  "settings.emph.en": "English emphasized",
+  "settings.emph.en.note": "Example sentences keep the Norwegian emphasized.",
+  "settings.emph.no": "Norwegian emphasized",
+  "settings.subsenses": "Subsenses",
+  "settings.subsenses.defs": "As the definitions",
+  "settings.subsenses.en": "In English only",
+  "settings.subsenses.en.note": "Shorter articles to scan. When the definitions show both languages. Short formula lines keep their own setting.",
+  "settings.formulas": "Short formula lines, such as \"used as an adverb:\"",
+  "settings.formulas.en": "In English",
+  "settings.formulas.no": "In Norwegian",
+  "settings.formulas.no.note": "The labels of compound lists are in Norwegian too.",
+  "settings.formulas.both": "In Norwegian and English",
+  "settings.formulas.both.note": "The labels of compound lists stay in English.",
+  "settings.ety": "Etymology",
+  "settings.ety.en": "In English",
+  "settings.ety.no": "In Norwegian",
+  "settings.ety.both": "In Norwegian and English",
+  "settings.mini": "Language",
+  "settings.mini.article": "Same as the article",
+  "settings.mini.both": "Norwegian and English",
+  "settings.mini.en": "English",
+  "settings.minicontent": "How much one shows",
+  "settings.minicontent.full": "Each sense in full, with a few examples",
+  "settings.minicontent.slim": "A short summary",
+  "settings.minicontent.slim.note": "Leaves out most subsenses and lists of compounds. Open the whole article for them.",
+  "settings.minispacing": "Spacing",
+  "settings.minispacing.compact": "Compact",
+  "settings.minispacing.article": "As the article",
+  "settings.minitext": "Text size",
+  "settings.minitext.article": "As the article",
+  "settings.minitext.smaller": "Smaller",
+  "settings.minitext.smaller.note": "A step smaller than the article, so more of a long small article fits in its box.",
+  "settings.miniscroll": "A tall one on a computer",
+  "settings.miniscroll.on": "Scrolls inside its box",
+  "settings.miniscroll.off": "Shown at full height",
+  "settings.minifetch": "When a linked article or page is loaded",
+  "settings.minifetch.hint": "Loading ahead makes articles open faster, but uses data for articles you never open. With the offline copy downloaded, articles come from the copy, so no data is used either way.",
+  "settings.minifetch.point": "When the pointer rests on its link",
+  "settings.minifetch.point.note": "Articles open almost at once on a computer. Uses a little extra data for links you rest on but don't click. On a touch screen, the article starts loading when you touch the link.",
+  "settings.minifetch.click": "When its link is clicked",
+  "settings.minifetch.click.note": "Uses the least data: nothing is loaded before you click. An article can take a moment to open the first time.",
+  "settings.minifetch.page": "With the page",
+  "settings.minifetch.page.note": "The fastest on a phone, which has no pointer to rest on. Uses the most data, since every linked article comes whether you open it or not. With the browser's data saver on, only when the link is clicked.",
+  "settings.peek": "Translation when hovering",
+  "settings.peek.on": "Shown",
+  "settings.peek.off": "Hidden",
+  "settings.peek.off.note": "Fewer pop-ups while you read. A click still opens the link.",
+  "settings.infl": "Tables",
+  "settings.infl.button": "Behind the Inflection button",
+  "settings.infl.open": "Always shown",
+  "settings.infl.open.note": "Handy when you are working on the forms. The articles get longer.",
+  "settings.minihw": "Its headword",
+  "settings.minihw.link": "Underlined, as a link",
+  "settings.minihw.article": "As the article's own headword",
+  "settings.minihw.article.note": "It is still a link: click it to open the whole article.",
+  "settings.pframes": "Context for participle forms",
+  "settings.pframes.hint": "In the inflection tables, grey words beside the perfect participle forms: \"+ noun\" after each, and \"den/det\" before the definite form. Not in the narrow tables.",
+  "settings.pframes.on": "Shown",
+  "settings.pframes.off": "Hidden",
+  "settings.listview": "List view in search",
+  "settings.listview.off": "Off",
+  "settings.listview.on": "On",
+  "settings.listview.multi": "Only when there are several articles",
+  "settings.suggestrows": "Spacing of the suggestions",
+  "settings.suggestrows.standard": "Standard",
+  "settings.suggestrows.roomy": "Roomy, for easier tapping",
+  "settings.storedTitle": "Stored on this device",
+  "settings.stats": "Send usage statistics",
+  "settings.stats.on": "On",
+  "settings.stats.off": "Off",
+  "settings.stats.hint": "Off: this browser sends none of the messages the Privacy page describes (page views, searches, suggestions chosen and installs). \"Delete stored data\" turns it back on.",
+  "settings.reset": "Reset settings",
+  "settings.delete": "Delete stored data",
+  "settings.stored": "Everything here is stored on this device only, and none of it is sent anywhere. No cookies, no accounts.",
+  "settings.deleted": "Stored data deleted.",
+  "settings.resetDone": "Settings reset.",
+  "offline.title": "Offline",
+  "offline.intro": "Keep the whole dictionary on this device to look words up without a connection. It is stored compressed; nothing is downloaded until you press the button.",
+  "offline.keep": "Keep the whole dictionary on this device (about {mb} MB)",
+  "offline.keepNoSize": "Keep the whole dictionary on this device",
+  "offline.progress": "Downloading: {done} of {total} MB",
+  "offline.updating": "Updating: {done} of {total} MB",
+  "offline.resume": "Try again",
+  "offline.failed": "The download stopped ({error}). What had arrived is kept: Try again continues from there.",
+  "offline.offline": "You are offline. Connect to download the dictionary.",
+  "offline.kept": "The whole dictionary is kept on this device, since {date} ({mb} MB).",
+  "offline.persisted": "The browser has agreed to keep it (persistent storage).",
+  "offline.notPersisted": "The browser has not promised to keep it: if the device runs short of space, it may clear it. Installing Ordpar as an app usually helps.",
+  "offline.usage": "This site uses {used} MB of the device's storage ({quota} MB available to it).",
+  "offline.updated": "Updated {date} ({mb} MB fetched).",
+  "offline.updateFailed": "The last update failed ({error}); the copy you have still works.",
+  "offline.checked": "Last checked for updates {date}.",
+  "offline.remove": "Remove the offline copy",
+  "offline.unsupported": "This browser cannot keep an offline copy.",
+  "offline.noteUpdated": "Ordpar has been updated — reload to see it",
+  "offline.noteReload": "Reload",
+  "offline.noteClose": "Close",
+  "install.title": "Install Ordpar as an app",
+  "install.text": "It opens from your home screen in its own window, and can keep the whole dictionary for use offline.",
+  "install.install": "Install",
+  "install.no": "No thanks",
+  "install.noteInstalled": "Installed. To use it offline, keep the whole dictionary in {link}.",
+  "install.noteLater": "You can install it any time in {link}.",
+  "install.link": "Settings → Offline",
+  "install.can": "Ordpar can be installed as an app: it opens from your home screen or desktop in its own window.",
+  "install.button": "Install app",
+  "install.inApp": "You're using the installed app.",
+  "install.installed": "Ordpar is installed on this device.",
+  "install.menu": "To install Ordpar, use your browser's menu: Install app (or Add to Home screen).",
+  "install.ios": "To install Ordpar, tap Share in Safari, then Add to Home Screen.",
+  "install.hint": "Install Ordpar as an app",
+  "personal.device": "These lists are kept only in this browser, on this device, and are not sent anywhere.",
+  "favourites.title": "Favourites",
+  "favourites.empty": "No favourites yet. Press the heart on an article to save it here.",
+  "favourites.remove": "Remove",
+  "favourites.removeLabel": "Remove {word} from favourites",
+  "favourites.toHistory": "History",
+  "history.title": "History",
+  "history.empty": "No history yet. The words you search for are listed here, newest first.",
+  "history.clear": "Clear history",
+  "history.confirm": "Clear all {n} entries from the history? This cannot be undone.",
+  "history.confirmYes": "Clear",
+  "history.cancel": "Cancel",
+  "history.cleared": "History cleared.",
+  "history.toFavourites": "Favourites",
+  "transfer.title": "Move to another device",
+  "transfer.link": "Export or import your favourites, history and settings",
+  "transfer.intro": "Export saves your settings, history and favourites in one small file. Import that file on another device to add its favourites and history to the ones there, and to take its settings.",
+  "transfer.export": "Export",
+  "transfer.share": "Send the file",
+  "transfer.import": "Import",
+  "transfer.shareFailed": "The share sheet would not take the file ({error}). It was saved as {name} instead.",
+  "transfer.exported": "Saved as {name}.",
+  "transfer.done": "Imported: {f} favourites and {h} history entries added, settings taken from the file.",
+  "transfer.parse": "This file could not be read: it is not an Ordpar export. Nothing was changed.",
+  "transfer.format": "This file is not an Ordpar export. Nothing was changed.",
+  "transfer.version": "This file comes from a newer version of Ordpar and cannot be read here. Nothing was changed.",
+  "transfer.content": "This file is damaged or incomplete. Nothing was changed.",
+  "transfer.storage": "The browser would not store the import (its storage is full or blocked). Nothing was changed.",
+
+  "pos.NOUN": "noun",
+  "pos.VERB": "verb",
+  "pos.ADJ": "adjective",
+  "pos.ADV": "adverb",
+  "pos.PRON": "pronoun",
+  "pos.DET": "determiner",
+  "pos.ADP": "preposition",
+  "pos.CCONJ": "conjunction",
+  "pos.SCONJ": "subjunction",
+  "pos.INTJ": "interjection",
+  "pos.SYM": "symbol",
+  "pos.ABBR": "abbreviation",
+  "pos.PROPN": "proper noun",
+  "pos.PFX": "prefix",
+  "pos.SFX": "suffix",
+  "pos.COMPPFX": "compound prefix"
+}};</script>
+</head>
+<body class="ordpar">
+<!-- the header: sitegen/chrome.py, one source for every page (decisions 63) -->
+<a class="ordpar-skip" href="#ordpar-main">Skip to the search</a>
+<header class="ordpar-header">
+<div class="ordpar-header-inner">
+<a class="ordpar-brand" href="/"><span class="ordpar-brand-name">Ordpar</span><span class="ordpar-brand-tagline">Norwegian–English dictionary</span></a>
+<form class="ordpar-search" role="search" action="/bm-en/" method="get">
+<label class="ordpar-visually-hidden" for="ordpar-q">Search a Norwegian word</label>
+<div class="ordpar-combobox"><input id="ordpar-q" type="text" lang="nb" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="200" placeholder="Search a Norwegian word"></div>
+<button class="ordpar-submit" type="submit">Search</button>
+</form>
+</div>
+</header>
+
+<main id="ordpar-main" class="ordpar-main ordpar-main--cards" tabindex="-1">
+  <p class="ordpar-visually-hidden" data-ordpar-live role="status" aria-live="polite"></p>
+  <div data-ordpar-results></div>
+</main>
+
+<!-- the footer: sitegen/chrome.py (decisions 63) -->
+<footer class="ordpar-footer">
+<div class="ordpar-footer-inner">
+<p class="ordpar-credit">Based on <a href="https://ordbokene.no/" rel="noopener">Bokmålsordboka</a> (UiB and Språkrådet) · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> · Ordpar is independent of both</p>
+<nav class="ordpar-footer-nav" aria-label="Site links"><a href="/">Home</a><a href="/about/">About and licence</a></nav>
+<p class="ordpar-devnote">Under development: Ordpar is not yet published, and its pages may change.</p>
+</div>
+</footer>
+
+<script src="/site/inflection.js?v=6739f6412a" defer></script>
+<script src="/site/article.js?v=28b2659cc2" defer></script>
+<script src="/site/mini.js?v=f60f656f00" defer></script>
+<!-- personal.js, lookup.js, ahead.js, offline.js, install.js, shell.js and personal-page.js, in
+     that order, one file since 2026-10-20 (ahead.js and personal-page.js since decisions 92) -->
+<script src="/site/shell-pages.js?v=6a0bb17a68"></script>
+<script>
+/* The search page: #q=<word> answered from the index, in place — no reload, so focus can
+   return to the search box (accessibility baseline, plan § 1.1). The search is in the address's
+   FRAGMENT, which the browser never sends to a server (decisions 104, R2); an old ?q=<word>
+   address is still read, and rewritten to #q= at once (lookup.js `fragmentAddress`). */
+(function () {
+  'use strict';
+  var main = document.getElementById('ordpar-main');
+  ordparSearch.fragmentAddress();
+
+  function title(q) {
+    document.title = q ? q + ' — ' + ordparShell.t('site.name')
+                       : ordparShell.t('site.name') + ' — ' + ordparShell.t('site.tagline');
+  }
+
+  // `record`: a search the reader made — it goes into the history when it finds something
+  // (brief 60b); back and forward re-answer without recording. `drawn`: a Random word draw,
+  // answered but not recorded nor sent (decisions 115), its entry marked so a reload of it
+  // stays a draw (`ordparSearch.takeDrawn`)
+  function run(q, push, record, drawn) {
+    if (push) {
+      var url = q ? ordparLookup.searchUrl(q) : location.pathname;
+      history.pushState(drawn ? { q: q, random: true } : { q: q }, '', url);
+    }
+    title(q);
+    var box = document.getElementById('ordpar-q');
+    if (box && box.value !== q) { box.value = q; }   // back/forward keeps the box in step
+    ordparSearch.render(main, q, { record: !!record });
+  }
+
+  window.addEventListener('popstate', function () {
+    var q = ordparSearch.queryFromLocation();
+    run(q, false, false);
+  });
+
+  // a link to a search on this page (a "Similar headwords" link, `/bm-en/#q=<word>`) only moves
+  // the fragment, so the browser would not load the page again: it is answered here as the
+  // search the reader made (recorded), as a new page's first load would be
+  ordparSearch.wireFragmentLinks(function (q) { window.scrollTo(0, 0); run(q, true, true); });
+
+  // the page reached by Back / Forward from another page (an article page, say) reloads when
+  // the browser kept no copy of it: that is not a search the reader made either
+  function arrivedByHistory() {
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      return !!nav && nav.type === 'back_forward';
+    } catch (e) { return false; }
+  }
+
+  function start() {
+    ordparShell.setSearchHandler(function (q, how) {
+      var drawn = !!(how && how.random);
+      run(q, true, !drawn, drawn);
+    });
+    // the first load from #q= is a search: the article page's search box and a suggestion
+    // chosen there, a "Recent" or /history/ entry, a "Similar headwords" link from the 404
+    // shell all arrive here (an old ?q= address too) — but not a Random word draw from another
+    // page, nor the reload of a drawn search (decisions 115)
+    var drawn = ordparSearch.takeDrawn();
+    run(ordparSearch.queryFromLocation(), false, !drawn && !arrivedByHistory());
+  }
+
+  function whenReady() {
+    (window.ordparShell.ready || Promise.resolve()).then(start);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', whenReady);
+  } else {
+    whenReady();
+  }
+}());
+</script>
+</body>
+</html>

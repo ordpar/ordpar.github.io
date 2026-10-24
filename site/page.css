@@ -1,0 +1,12 @@
+.ordpar-viewline{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem 1.2rem;margin:0 0 .8rem}
+.ordpar-viewline .ordpar-dict-title{margin:0;font-size:.8rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.09em}
+.ordpar-viewline a{text-decoration:none}
+.ordpar-viewline a:hover{text-decoration:underline}
+.ordpar-entry .ordpar-note{margin:0 0 1em;font-style:italic}
+.ordpar-about h1{font-size:1.6rem;margin:.3em 0 .5em;color:var(--ordpar-accent)}
+.ordpar-about h2{font-size:1.05rem;margin:1.4em 0 .3em}
+.ordpar-about p{margin:.5em 0;line-height:1.5}
+.ordpar-toc{margin:.8em 0 1.2em;padding:.5em .9em;border-left:2px solid var(--ordpar-border,#e0d8d9)}
+.ordpar-toc-title{margin:0 0 .2em;font-size:.9rem;font-weight:600;color:var(--ordpar-muted,#757070)}
+.ordpar-toc ul{margin:0;padding-left:1.1em;line-height:1.6}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Favourites — Ordpar</title>
+<meta name="robots" content="noindex">
+<!--ORDPAR_HEAD-->
+<!-- the head script: sitegen/head.py THEME_JS, one copy (decisions 63), the file
+     /site/theme.js since 2026-10-20 -->
+<!--ORDPAR_HEADJS-->
+<link rel="stylesheet" href="/site/shell-pages.css">
+<!--ORDPAR_STRINGS-->
+</head>
+<body class="ordpar">
+<!-- the header: sitegen/chrome.py, one source for every page (decisions 63) -->
+<!--ORDPAR_HEADER-->
+
+<!-- The favourites page (site decisions 60): a static shell, drawn from this browser's storage by
+     personal-page.js; an article opened in a row is fetched from its page (decisions 89) -->
+<main id="ordpar-main" class="ordpar-main ordpar-main--cards" tabindex="-1" data-ordpar-personal="favourites">
+  <noscript><p>Favourites needs JavaScript: the list is kept in this browser's storage.</p></noscript>
+</main>
+
+<!-- the footer: sitegen/chrome.py (decisions 63) -->
+<!--ORDPAR_FOOTER-->
+
+<!-- an opened favourite is the list view's article (site decisions 89): the search page's
+     article scripts, deferred, as there -->
+<script src="/site/inflection.js" defer></script>
+<script src="/site/article.js" defer></script>
+<script src="/site/mini.js" defer></script>
+<!-- personal.js, lookup.js, ahead.js, offline.js, install.js, shell.js and personal-page.js, in
+     that order, one file since 2026-10-20 (ahead.js and personal-page.js since decisions 92) -->
+<script src="/site/shell-pages.js"></script>
+</body>
+</html>
