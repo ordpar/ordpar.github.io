@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- ordpar build: mirror snapshot 2026-10-26T01:15:52.824874243+00:00 · library c2df423ef -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>More ways to use Ordpar — Ordpar</title>
+<link rel="canonical" href="https://ordpar.no/more/">
+<link rel="icon" type="image/png" sizes="192x192" href="/site/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#6b0f2e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ordpar">
+<meta property="og:url" content="https://ordpar.no/more/">
+<meta property="og:title" content="More ways to use Ordpar — Ordpar">
+<meta property="og:image" content="https://ordpar.no/site/og/ordpar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ordpar: Norwegian–English dictionary">
+<meta name="twitter:card" content="summary_large_image">
+<script src="/site/theme.js?v=4f2bf310f2"></script>
+<link rel="stylesheet" href="/site/ordpar.css?v=eb200658b1">
+</head>
+<body class="ordpar">
+<a class="ordpar-skip" href="#ordpar-main">Skip to the search</a>
+<header class="ordpar-header">
+<div class="ordpar-header-inner">
+<a class="ordpar-brand" href="/"><span class="ordpar-brand-name">Ordpar</span>
+<span class="ordpar-brand-tagline">Norwegian–English dictionary</span></a>
+<form class="ordpar-search" role="search" action="/bm-en/" method="get">
+<label class="ordpar-visually-hidden" for="ordpar-q">Search a Norwegian word</label>
+<div class="ordpar-combobox"><input id="ordpar-q" type="text" lang="nb" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="200" placeholder="Search a Norwegian word"></div>
+<button class="ordpar-submit" type="submit">Search</button>
+</form>
+</div>
+</header>
+<main id="ordpar-main" class="ordpar-main" tabindex="-1">
+<article class="ordpar-about">
+<h1>More ways to use Ordpar</h1>
+<p>Ordpar is a website, but you don't have to visit it to use it. Here are three other ways: as a pop-up on any web page, as flashcards in Anki, and on your own device without a connection.</p>
+<h2 id="popup">Look up words on any web page</h2>
+<p>With Definer, a pop-up dictionary extension for Chrome, Edge and Firefox, you can select a Norwegian word on any web page and see its Ordpar article in a pop-up, with small articles for linked words, just as on ordpar.no. Definer is made by Lumetrium, not by Ordpar, and everything described here is free. To set it up:</p>
+<ol>
+<li>Install Definer from the <a href="https://chromewebstore.google.com/detail/definer-word-translator-a/noagjioaihamoljcbelhdlldnmlgnkon">Chrome Web Store</a>, <a href="https://microsoftedge.microsoft.com/addons/detail/definer-word-translator/bmjggedeimdncfelfdcphnmbknkmfffp">Microsoft Edge Add-ons</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/lumetrium-definer">Firefox Add-ons</a>.</li>
+<li>Right-click Definer's icon and choose Options.</li>
+<li>Choose Sources, then + NEW SOURCE, then CONSTRUCTOR.</li>
+<li>In the URL field, paste the address below. If you have changed any settings on ordpar.no, the address carries them, so the pop-up shows articles the way you see them here:<div class="ordpar-code"><code data-ordpar-popup>https://ordpar.no/bm-en/#q={{str}}</code></div></li>
+<li>Choose ADD SOURCE.</li>
+<li>Find Custom in the list of sources and open its settings.</li>
+<li>In the CSS field, paste:<div class="ordpar-code"><code>.ordpar-header, .ordpar-footer, .ordpar-devnote { display: none !important; } .ordpar-nbhw { display: inline-flex !important; }</code></div></li>
+<li>Select a word on a page and press Definer's icon.</li>
+</ol>
+<p>If you change your settings later, copy the address again, here or at the bottom of Settings, and paste it over the old one in Definer's URL field.</p>
+<p>The CSS line also shows a button beside the headword in the pop-up that switches <em>Norwegian only</em> on or off, for that pop-up only. If your CSS field holds the line without its `.ordpar-nbhw` part, paste the line again to get the button.</p>
+<p>A word with several articles shows them as a list, and an inflected form, such as <em>husene</em>, says which word it is a form of. The pop-up follows your browser's light or dark mode, unless you have chosen one in Settings. In a PDF, open the file in Definer's own PDF reader: the pop-up does not work in the browser's built-in PDF viewer.</p>
+<h2 id="anki">Practise the words in Anki</h2>
+<p>Anki is a free flashcard program that shows you the cards you find hard more often than the ones you already know. Ordpar's Anki deck, <em>6000 Most Frequent Norwegian Words</em>, has the 6,000 most frequent Norwegian words, most frequent first, in two parts: <a href="https://ankiweb.net/shared/info/1989661164">Part 1</a> and <a href="https://ankiweb.net/shared/info/879167685">Part 2</a>. The back of each card is the word's Ordpar article, with small articles for linked words that open with no network needed, and every word also has a card from English to Norwegian. To start:</p>
+<ol>
+<li>Install Anki on your computer from <a href="https://apps.ankiweb.net/">apps.ankiweb.net</a>. It is free for Windows, Mac and Linux.</li>
+<li>Open Part 1 on AnkiWeb and press Download, then do the same for Part 2.</li>
+<li>Double-click each downloaded file to add it to Anki, or use File → Import.</li>
+</ol>
+<p>On a phone, AnkiDroid for Android is free, and AnkiMobile for iPhone and iPad is paid. In AnkiDroid you can add the deck directly: open its Shared Decks, search for "Norwegian", and choose <em>6000 Most Frequent Norwegian Words, Part 1</em>, then Part 2. On an iPhone or iPad, add the deck on your computer and sync both through a free AnkiWeb account. Each part's page on AnkiWeb says how to practise with the deck and how to update it.</p>
+<h2 id="offline">Use it without a connection</h2>
+<p>Ordpar can keep the whole dictionary on your device, so you can look words up offline; pages also open faster. In <a href="https://ordpar.no/settings/#data">Settings</a>, under <em>Loading, offline and your data</em>, press <em>Keep the whole dictionary on this device</em>. On a phone, installing Ordpar as an app (your browser's menu, or the offer Ordpar shows) puts it on your home screen and helps the browser keep the copy.</p>
+</article>
+</main>
+<footer class="ordpar-footer">
+<div class="ordpar-footer-inner">
+<p class="ordpar-credit">Based on <a href="https://ordbokene.no/" rel="noopener">Bokmålsordboka</a> (UiB and Språkrådet) · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> · Ordpar is independent of both</p>
+<nav class="ordpar-footer-nav" aria-label="Site links"><a href="/">Home</a>
+<a href="/help/">Help</a>
+<a href="/more/">More ways to use Ordpar</a>
+<a href="/about/">About and licence</a></nav>
+<p class="ordpar-devnote">Under development: Ordpar is still being built, and its pages may change.</p>
+</div>
+</footer>
+<script src="/site/ordpar.js?v=b7c84b19c2" defer></script>
+</body>
+</html>
