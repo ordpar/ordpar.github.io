@@ -1,0 +1,24 @@
+.ordpar-viewline{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem 1.2rem;margin:0 0 .8rem}
+.ordpar-viewline .ordpar-dict-title{margin:0;font-size:.8rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.09em}
+.ordpar-viewline a{text-decoration:none}
+.ordpar-viewline a:hover{text-decoration:underline}
+.ordpar-entry .ordpar-note{margin:0 0 1em;font-style:italic}
+.ordpar-about h1{font-size:1.6rem;margin:.3em 0 .5em;color:var(--ordpar-accent)}
+.ordpar-about h2{font-size:1.05rem;margin:1.4em 0 .3em}
+.ordpar-about p{margin:.5em 0;line-height:1.5}
+.ordpar-toc{margin:.8em 0 1.2em;padding:.5em .9em;border-left:2px solid var(--ordpar-border,#e0d8d9)}
+.ordpar-toc-title{margin:0 0 .2em;font-size:.9rem;font-weight:600;color:var(--ordpar-muted,#757070)}
+.ordpar-toc ul{margin:0;padding-left:1.1em;line-height:1.6}
+.ordpar-about ol{margin:.5em 0 .8em;padding-left:1.6em;line-height:1.5}
+.ordpar-about ol>li{margin:.3em 0;padding-left:.2em}
+.ordpar-about ol>li::marker{font-weight:700;color:var(--ordpar-accent)}
+.ordpar-code{margin:.35em 0 .1em;max-width:100%}
+.ordpar-code.has-copy{display:flex;align-items:flex-start;gap:.5em}
+.ordpar-code.has-copy code{flex:1 1 auto;min-width:0}
+.ordpar-code-copy{flex:none}
+.ordpar-code code{display:block;padding:.35em .6em;white-space:pre-wrap;overflow-wrap:anywhere;
+  font:.88rem/1.5 ui-monospace,Consolas,"Cascadia Mono",Menlo,monospace;color:var(--ordpar-text);
+  background:var(--ordpar-pill);border:1px solid var(--ordpar-border);border-radius:var(--ordpar-radius);
+  -webkit-user-select:all;user-select:all}
+.ordpar-about h2[id]{scroll-margin-top:1rem}

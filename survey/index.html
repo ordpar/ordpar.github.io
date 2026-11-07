@@ -1,0 +1,148 @@
+<!doctype html>
+<!-- ordpar build: mirror snapshot 2026-10-26T01:15:52.824874243+00:00 · library 5f0db8beb -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordpar — your first impressions — Ordpar</title>
+<link rel="canonical" href="https://ordpar.no/survey/">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="192x192" href="/site/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#6b0f2e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ordpar">
+<meta property="og:url" content="https://ordpar.no/survey/">
+<meta property="og:title" content="Ordpar — your first impressions — Ordpar">
+<meta property="og:image" content="https://ordpar.no/site/og/ordpar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ordpar: Norwegian–English dictionary">
+<meta name="twitter:card" content="summary_large_image">
+<script src="/site/theme.js?v=6dbeb56b7c"></script>
+<link rel="stylesheet" href="/site/ordpar.css?v=0513cc0737">
+</head>
+<body class="ordpar">
+<a class="ordpar-skip" href="#ordpar-main">Skip to the search</a>
+<header class="ordpar-header">
+<div class="ordpar-header-inner">
+<a class="ordpar-brand" href="/"><span class="ordpar-brand-name">Ordpar</span>
+<span class="ordpar-brand-tagline">Norwegian–English dictionary</span></a>
+<form class="ordpar-search" role="search" action="/bm-en/" method="get">
+<label class="ordpar-visually-hidden" for="ordpar-q">Search a Norwegian word</label>
+<div class="ordpar-combobox"><input id="ordpar-q" type="text" lang="nb" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="200" placeholder="Search a Norwegian word"></div>
+<button class="ordpar-submit" type="submit">Search</button>
+</form>
+</div>
+</header>
+<main id="ordpar-main" class="ordpar-main" tabindex="-1">
+<article class="ordpar-about">
+<h1>Ordpar — your first impressions</h1>
+<p class="ordpar-survey-note"><strong>Every question is optional.</strong></p>
+<p>Ordpar is a Norwegian–English dictionary in development, built on Bokmålsordboka. Thank you for trying it! These questions take five to ten minutes. Answer as much or as little as you like — specific examples help most ("I searched for X and …").</p>
+<p>Your answers are stored by Ordpar (see <a href="/privacy/#the-survey">Privacy</a>) and read by Robin (the creator of Ordpar), who also uses an AI assistant (Claude, made by Anthropic) to help go through them. Leave the last question blank if you'd rather stay anonymous.</p>
+<form class="ordpar-survey" id="ordpar-survey" aria-label="The survey&#x27;s questions" novalidate data-nosnippet>
+<noscript><p class="ordpar-report-status ordpar-report-status--failed">Sending your answers needs JavaScript, which is turned off in this browser.</p></noscript>
+<div class="ordpar-survey-q" data-q="level" data-kind="one">
+<fieldset>
+<legend class="ordpar-report-label">How well do you know Norwegian?</legend>
+<label class="ordpar-survey-choice"><input type="radio" name="level" value="Just starting"> Just starting</label>
+<label class="ordpar-survey-choice"><input type="radio" name="level" value="I can read simple texts"> I can read simple texts</label>
+<label class="ordpar-survey-choice"><input type="radio" name="level" value="I get by in daily life"> I get by in daily life</label>
+<label class="ordpar-survey-choice"><input type="radio" name="level" value="Fluent"> Fluent</label>
+<label class="ordpar-survey-choice"><input type="radio" name="level" value="Norwegian is my first language"> Norwegian is my first language</label>
+</fieldset>
+</div>
+<div class="ordpar-survey-q" data-q="first_language" data-kind="short" data-skip-q="level" data-skip-v="Norwegian is my first language">
+<label class="ordpar-report-label" for="ordpar-survey-first-language">What is your first language?</label>
+<input class="ordpar-report-reply" type="text" id="ordpar-survey-first-language" name="first_language" maxlength="100">
+</div>
+<div class="ordpar-survey-q" data-q="looked_up" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-looked-up">What did you look up, and did you find what you were looking for?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-looked-up-hint">A few words you searched for, and whether the result helped.</p>
+<textarea class="ordpar-report-text" id="ordpar-survey-looked-up" name="looked_up" rows="4" maxlength="2000" aria-describedby="ordpar-survey-looked-up-hint"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="confusing" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-confusing">Was anything confusing, wrong or broken?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-confusing-hint">Which word or page? A wrong translation, a strange suggestion, a button that did nothing — anything.</p>
+<textarea class="ordpar-report-text" id="ordpar-survey-confusing" name="confusing" rows="4" maxlength="2000" aria-describedby="ordpar-survey-confusing-hint"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="missed" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-missed">What did you miss, or wish it could do?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-missed-hint">A feature, a setting, the look or the layout, a word or a meaning that was missing, how it works on your phone — anything.</p>
+<textarea class="ordpar-report-text" id="ordpar-survey-missed" name="missed" rows="4" maxlength="2000" aria-describedby="ordpar-survey-missed-hint"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="ideas" data-kind="many">
+<fieldset aria-describedby="ordpar-survey-ideas-hint">
+<legend class="ordpar-report-label">Some ideas we have. Which would you use?</legend>
+<p class="ordpar-report-hint" id="ordpar-survey-ideas-hint">Anki, mentioned below, is a free flashcard app that uses spaced repetition: it shows each word again just before you're likely to forget it.</p>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Make Anki flashcards from words you&#x27;ve saved — one by one or all at once, kept up to date as the dictionary improves"> Make Anki flashcards from words you've saved — one by one or all at once, kept up to date as the dictionary improves</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="A short description of how a word&#x27;s meanings fit together, for words with many meanings (on the flashcards, and optional on the site)"> A short description of how a word's meanings fit together, for words with many meanings (on the flashcards, and optional on the site)</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Common pitfalls for English speakers: false friends, tricky grammar, words that don&#x27;t translate the way you&#x27;d expect (on the flashcards, and optional on the site)"> Common pitfalls for English speakers: false friends, tricky grammar, words that don't translate the way you'd expect (on the flashcards, and optional on the site)</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Example sentences for the words and meanings that don&#x27;t have any yet"> Example sentences for the words and meanings that don't have any yet</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Ask a question about a word, answered later (not straight away) by other readers, or by an AI with the answer checked before it is shown"> Ask a question about a word, answered later (not straight away) by other readers, or by an AI with the answer checked before it is shown</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Use Ordpar as the dictionary on your e-reader (Kindle, Kobo) when reading Norwegian books"> Use Ordpar as the dictionary on your e-reader (Kindle, Kobo) when reading Norwegian books</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="ideas" value="Synthetic voice audio for the English translations, similar to the Norwegian audio that is already in the dictionary"> Synthetic voice audio for the English translations, similar to the Norwegian audio that is already in the dictionary</label>
+</fieldset>
+</div>
+<div class="ordpar-survey-q" data-q="ideas_comments" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-ideas-comments">Any comments on these ideas, or an idea of your own?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-ideas-comments-hint">Say which idea you mean.</p>
+<textarea class="ordpar-report-text" id="ordpar-survey-ideas-comments" name="ideas_comments" rows="4" maxlength="2000" aria-describedby="ordpar-survey-ideas-comments-hint"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="other_language" data-kind="short">
+<label class="ordpar-report-label" for="ordpar-survey-other-language">Would you like a dictionary like this one between Norwegian and a language other than English? If so, which?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-other-language-hint">Your own first language, or any other.</p>
+<input class="ordpar-report-reply" type="text" id="ordpar-survey-other-language" name="other_language" maxlength="200" aria-describedby="ordpar-survey-other-language-hint">
+</div>
+<div class="ordpar-survey-q" data-q="devices" data-kind="many">
+<fieldset>
+<legend class="ordpar-report-label">What did you use it on?</legend>
+<label class="ordpar-survey-choice"><input type="checkbox" name="devices" value="Phone"> Phone</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="devices" value="Tablet"> Tablet</label>
+<label class="ordpar-survey-choice"><input type="checkbox" name="devices" value="Computer"> Computer</label>
+</fieldset>
+</div>
+<div class="ordpar-survey-q" data-q="browser" data-kind="short">
+<label class="ordpar-report-label" for="ordpar-survey-browser">Which browser, if you know it?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-browser-hint">Chrome, Safari, Firefox …</p>
+<input class="ordpar-report-reply" type="text" id="ordpar-survey-browser" name="browser" maxlength="100" aria-describedby="ordpar-survey-browser-hint">
+</div>
+<div class="ordpar-survey-q" data-q="again" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-again">Would you use it again? For what?</label>
+<textarea class="ordpar-report-text" id="ordpar-survey-again" name="again" rows="4" maxlength="2000"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="anything_else" data-kind="long">
+<label class="ordpar-report-label" for="ordpar-survey-anything-else">Anything else you'd like to tell us?</label>
+<p class="ordpar-report-hint" id="ordpar-survey-anything-else-hint">About Ordpar, this survey, or anything else.</p>
+<textarea class="ordpar-report-text" id="ordpar-survey-anything-else" name="anything_else" rows="4" maxlength="2000" aria-describedby="ordpar-survey-anything-else-hint"></textarea>
+</div>
+<div class="ordpar-survey-q" data-q="follow" data-kind="follow">
+<label class="ordpar-report-label" for="ordpar-survey-follow">If it's all right to ask you a follow-up question, leave an email address or name.</label>
+<p class="ordpar-report-hint" id="ordpar-survey-follow-hint">Only Robin will see this. It's removed before the answers are shared with the AI assistant, and it's never passed on to anyone else.</p>
+<input class="ordpar-report-reply" type="text" id="ordpar-survey-follow" name="follow" maxlength="254" autocomplete="email" aria-describedby="ordpar-survey-follow-hint">
+</div>
+<div class="ordpar-report-trap" aria-hidden="true"><label for="ordpar-survey-hp">Leave this field empty</label><input type="text" id="ordpar-survey-hp" name="website" tabindex="-1" autocomplete="off"></div>
+<p class="ordpar-report-status ordpar-survey-status" role="status"></p>
+<p class="ordpar-report-actions"><button type="submit" class="ordpar-result-btn ordpar-report-send ordpar-survey-send">Send</button></p>
+</form>
+<p class="ordpar-survey-done" id="ordpar-survey-done" role="status" tabindex="-1" hidden></p>
+<script type="application/json" id="ordpar-survey-words">{"empty": "Please answer at least one question before you send.", "failed": "Your answers could not be sent. They are kept here; please try again.", "form": "The survey's questions", "noscript": "Sending your answers needs JavaScript, which is turned off in this browser.", "offline": "You are offline. Sending your answers needs a connection; they are kept here, so you can send them when you are back online.", "send": "Send", "sending": "Sending …", "sent": "Thank you, your answers have been sent.", "tooMany": "We have received a great many messages in the last hour. Your answers are kept here; please try again in an hour.", "trap": "Leave this field empty"}</script>
+
+</article>
+</main>
+<footer class="ordpar-footer">
+<div class="ordpar-footer-inner">
+<p class="ordpar-credit">Based on <a href="https://ordbokene.no/" rel="noopener">Bokmålsordboka</a> (UiB and Språkrådet) · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> · Ordpar is independent of both</p>
+<nav class="ordpar-footer-nav" aria-label="Site links"><a href="/">Home</a>
+<a href="/help/">Help</a>
+<a href="/more/">More ways to use Ordpar</a>
+<a href="/about/">About</a>
+<a href="/privacy/">Privacy</a></nav>
+<p class="ordpar-devnote">Under development: Ordpar is still being built, and its pages may change.</p>
+</div>
+</footer>
+<script src="/site/ordpar.js?v=4b13ed687e" defer></script>
+<script src="/site/survey.js?v=1f648dc7f2" defer></script>
+</body>
+</html>
