@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordpar</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/site/shell-pages.css">
+</head>
+<body class="ordpar">
+
+<main id="ordpar-main" class="ordpar-main ordpar-main--cards" tabindex="-1">
+  <div class="ordpar-visually-hidden" data-ordpar-live data-nosnippet role="status" aria-live="polite"></div>
+  <div data-ordpar-results></div>
+</main>
+
+
+<script src="/site/inflection.js" defer></script>
+<script src="/site/article.js" defer></script>
+<script src="/site/mini.js" defer></script>
+<script src="/site/shell-pages.js"></script>
+<script>
+(function () {
+  'use strict';
+  var main = document.getElementById('ordpar-main');
+  var results = main.querySelector('[data-ordpar-results]');
+
+  function base() { return window.ORDPAR_BASE || '/'; }
+
+  function segments() {
+    var path = decodeURIComponent(location.pathname);
+    var b = base();
+    if (b !== '/' && path.indexOf(b) === 0) { path = '/' + path.slice(b.length); }
+    return path.split('/').filter(function (s) { return s.length > 0; });
+  }
+
+  function notFound() {
+    var path = location.pathname;
+    document.title = ordparShell.t('notfound.title') + ' — ' + ordparShell.t('site.name');
+    results.textContent = '';
+    var box = document.createElement('section');
+    box.className = 'ordpar-notfound';
+    var h1 = document.createElement('h1');
+    h1.textContent = ordparShell.t('notfound.title');
+    var p = document.createElement('p');
+    p.textContent = ordparShell.t('notfound.body').split('{path}').join(path);
+    var a = document.createElement('a');
+    a.href = base();
+    a.textContent = ordparShell.t('notfound.home');
+    box.appendChild(h1);
+    box.appendChild(p);
+    box.appendChild(a);
+    results.appendChild(box);
+  }
+
+  function word(w) {
+    document.title = w + ' — ' + ordparShell.t('site.name');
+    ordparLookup.pageFor(w).then(function (url) {
+      if (url && url !== location.pathname && decodeURIComponent(url) !== decodeURIComponent(location.pathname)) {
+        location.replace(url + location.hash);
+        return;
+      }
+      ordparSearch.wordPage(main, w);
+    });
+  }
+
+  function route() {
+    var parts = segments();
+    if (parts[0] !== 'bm-en') { notFound(); return; }
+    var rest = parts.slice(1);
+    if (rest.length === 0) {
+      ordparSearch.fragmentAddress();
+      var drawn = ordparSearch.takeDrawn();
+      var q = ordparSearch.queryFromLocation();
+      ordparSearch.answerInPlace(main);
+      document.title = q + ' — ' + ordparShell.t('site.name');
+      ordparSearch.render(main, q, { record: !drawn });
+      return;
+    }
+    if (/^\d+$/.test(rest[0])) {
+      var target = base() + 'bm-en/' + rest[0] + '/';
+      if (target !== location.pathname) { location.replace(target); return; }
+      notFound();
+      return;
+    }
+    if (rest.length === 1) { word(rest[0]); return; }
+    notFound();
+  }
+
+  function whenReady() { (window.ordparShell.ready || Promise.resolve()).then(route); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', whenReady);
+  } else {
+    whenReady();
+  }
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "_comment": "The readers' survey (site decisions 173, Robin 2026-11-07): the page /survey/, 'Ordpar — your first impressions'. ONE data file for its words, its questions and the ideas listed, so they can change without touching code: the site build renders the page from it (ordpar/sitegen/survey.py), and the receiver takes any question key of the agreed shape (ordpar/receiver/src/survey.js). Each question: id (the key the answer is sent and stored under: lower case, digits, _; never reuse a retired key for another question), kind ('one' one choice, 'many' several, 'short' a line of text, 'long' a box of text, 'follow' the follow-up address or name, sent apart from the answers and deleted once dealt with), label, hint (optional), choices (for 'one' and 'many', sent as written), max (characters, for the texts; at most the receiver's MAX_ANSWER, the follow-up exactly its MAX_FOLLOW), skip_if (optional: {question id: choice} hides and never sends this question while that choice is chosen). note (optional): one line in bold, first under the title (Robin 2026-11-07: \"Include a note on the top of the survey that each field is optional\"). intro: paragraphs, [text](href) a link. words: the page's other words. ordpar/tests/test_ordpar_survey173.py holds the approved words; ordpar/receiver/test/survey.test.js the limits.",
+  "title": "Ordpar — your first impressions",
+  "note": "Every question is optional.",
+  "intro": [
+    "Ordpar is a Norwegian–English dictionary in development, built on Bokmålsordboka. Thank you for trying it! These questions take five to ten minutes. Answer as much or as little as you like — specific examples help most (\"I searched for X and …\").",
+    "Your answers are stored by Ordpar (see [Privacy](/privacy/#the-survey)) and read by Robin (the creator of Ordpar), who also uses an AI assistant (Claude, made by Anthropic) to help go through them. Leave the last question blank if you'd rather stay anonymous."
+  ],
+  "questions": [
+    {"id": "level", "kind": "one", "label": "How well do you know Norwegian?",
+     "choices": ["Just starting", "I can read simple texts", "I get by in daily life", "Fluent", "Norwegian is my first language"]},
+    {"id": "first_language", "kind": "short", "label": "What is your first language?", "max": 100,
+     "skip_if": {"level": "Norwegian is my first language"}},
+    {"id": "looked_up", "kind": "long", "label": "What did you look up, and did you find what you were looking for?",
+     "hint": "A few words you searched for, and whether the result helped.", "max": 2000},
+    {"id": "confusing", "kind": "long", "label": "Was anything confusing, wrong or broken?",
+     "hint": "Which word or page? A wrong translation, a strange suggestion, a button that did nothing — anything.", "max": 2000},
+    {"id": "missed", "kind": "long", "label": "What did you miss, or wish it could do?",
+     "hint": "A feature, a setting, the look or the layout, a word or a meaning that was missing, how it works on your phone — anything.", "max": 2000},
+    {"id": "ideas", "kind": "many", "label": "Some ideas we have. Which would you use?",
+     "hint": "Anki, mentioned below, is a free flashcard app that uses spaced repetition: it shows each word again just before you're likely to forget it.",
+     "choices": [
+       "Make Anki flashcards from words you've saved — one by one or all at once, kept up to date as the dictionary improves",
+       "A short description of how a word's meanings fit together, for words with many meanings (on the flashcards, and optional on the site)",
+       "Common pitfalls for English speakers: false friends, tricky grammar, words that don't translate the way you'd expect (on the flashcards, and optional on the site)",
+       "Example sentences for the words and meanings that don't have any yet",
+       "Ask a question about a word, answered later (not straight away) by other readers, or by an AI with the answer checked before it is shown",
+       "Use Ordpar as the dictionary on your e-reader (Kindle, Kobo) when reading Norwegian books",
+       "Synthetic voice audio for the English translations, similar to the Norwegian audio that is already in the dictionary"
+     ]},
+    {"id": "ideas_comments", "kind": "long", "label": "Any comments on these ideas, or an idea of your own?",
+     "hint": "Say which idea you mean.", "max": 2000},
+    {"id": "other_language", "kind": "short", "label": "Would you like a dictionary like this one between Norwegian and a language other than English? If so, which?",
+     "hint": "Your own first language, or any other.", "max": 200},
+    {"id": "devices", "kind": "many", "label": "What did you use it on?", "choices": ["Phone", "Tablet", "Computer"]},
+    {"id": "browser", "kind": "short", "label": "Which browser, if you know it?", "hint": "Chrome, Safari, Firefox …", "max": 100},
+    {"id": "again", "kind": "long", "label": "Would you use it again? For what?", "max": 2000},
+    {"id": "anything_else", "kind": "long", "label": "Anything else you'd like to tell us?",
+     "hint": "About Ordpar, this survey, or anything else.", "max": 2000},
+    {"id": "follow", "kind": "follow", "label": "If it's all right to ask you a follow-up question, leave an email address or name.",
+     "hint": "Only Robin will see this. It's removed before the answers are shared with the AI assistant, and it's never passed on to anyone else.", "max": 254}
+  ],
+  "words": {
+    "form": "The survey's questions",
+    "send": "Send",
+    "sending": "Sending …",
+    "sent": "Thank you, your answers have been sent.",
+    "empty": "Please answer at least one question before you send.",
+    "offline": "You are offline. Sending your answers needs a connection; they are kept here, so you can send them when you are back online.",
+    "failed": "Your answers could not be sent. They are kept here; please try again.",
+    "tooMany": "We have received a great many messages in the last hour. Your answers are kept here; please try again in an hour.",
+    "noscript": "Sending your answers needs JavaScript, which is turned off in this browser.",
+    "trap": "Leave this field empty"
+  }
+}

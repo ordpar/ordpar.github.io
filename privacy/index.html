@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- ordpar build: mirror snapshot 2026-10-26T01:15:52.824874243+00:00 · library 04d2c9e66 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Ordpar</title>
+<link rel="canonical" href="https://ordpar.no/privacy/">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="192x192" href="/site/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#6b0f2e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ordpar">
+<meta property="og:url" content="https://ordpar.no/privacy/">
+<meta property="og:title" content="Privacy — Ordpar">
+<meta property="og:image" content="https://ordpar.no/site/og/ordpar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ordpar: Norwegian–English dictionary">
+<meta name="twitter:card" content="summary_large_image">
+<script src="/site/theme.js?v=77c7ac9b15"></script>
+<link rel="stylesheet" href="/site/ordpar.css?v=a9554374a5">
+</head>
+<body class="ordpar">
+<a class="ordpar-skip" href="#ordpar-main">Skip to the search</a>
+<header class="ordpar-header">
+<div class="ordpar-header-inner">
+<a class="ordpar-brand" href="/"><span class="ordpar-brand-name">Ordpar</span>
+<span class="ordpar-brand-tagline">Norwegian–English dictionary</span></a>
+<form class="ordpar-search" role="search" action="/bm-en/" method="get">
+<label class="ordpar-visually-hidden" for="ordpar-q">Search a Norwegian word</label>
+<div class="ordpar-combobox"><input id="ordpar-q" type="text" lang="nb" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="200" placeholder="Search a Norwegian word"></div>
+<button class="ordpar-submit" type="submit">Search</button>
+</form>
+</div>
+</header>
+<main id="ordpar-main" class="ordpar-main" tabindex="-1">
+<article class="ordpar-about">
+<h1>Privacy</h1>
+<nav class="ordpar-tabs" aria-label="About Ordpar">
+<ul class="ordpar-jump">
+<li><a href="/about/">About</a></li>
+<li><a href="/coming/">Coming to Ordpar</a></li>
+<li><a href="/changes/">Changes</a></li>
+<li><a href="/privacy/" aria-current="page">Privacy</a></li>
+<li><a href="/thanks/">Thanks</a></li>
+</ul>
+</nav>
+<p>Ordpar sets no cookies, has no accounts, and has no advertising or scripts from other companies on its pages. This page says what your browser keeps, what it sends to us, what we keep and for how long, and which companies handle it. They are GitHub, which serves the site's pages; Cloudflare, which runs our receiver and our audio server; and Anthropic, whose AI assistant may help us read a report or survey answers you send.</p>
+<p><strong>To look words up without anyone seeing which:</strong> download the offline copy, in Settings under "Loading, offline and your data". Your searches and the articles you open are then answered from your device, so neither GitHub nor anyone else sees which words you look up; only a recording you play, and the list of recordings it is found in, is still fetched (see "Audio"). Setting "When a linked article or page is loaded" to "When its link is clicked" also stops the site fetching anything before you open it.</p>
+<nav class="ordpar-toc" aria-labelledby="ordpar-toc-title">
+<p class="ordpar-toc-title" id="ordpar-toc-title">On this page</p>
+<ul>
+<li><a href="#what-stays-on-your-device">What stays on your device</a></li>
+<li><a href="#what-your-browser-sends-us">What your browser sends us</a></li>
+<li><a href="#where-it-is-kept-and-for-how-long">Where it is kept, and for how long</a></li>
+<li><a href="#what-github-sees">What GitHub sees</a></li>
+<li><a href="#audio">Audio</a></li>
+<li><a href="#reporting-a-mistake">Reporting a mistake</a></li>
+<li><a href="#the-survey">The survey</a></li>
+<li><a href="#who-is-responsible">Who is responsible</a></li>
+<li><a href="#your-rights">Your rights</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</nav>
+<h2 id="what-stays-on-your-device">What stays on your device</h2>
+<p>Your browser keeps these in its storage for this site: your settings, when you change one; whether you search in English or in Norwegian, once you have switched; your favourites, when you mark one; your search history (a list of words you have looked up); a note about the offer to install Ordpar as an app (whether it was shown, your answer and when, and, until you close the tab, that it was shown in this visit); and, if you download the whole dictionary for use offline, that copy and two records about it (its date and size, and the result of the last check for a newer version). None of this is sent anywhere. Only your browser reads it, and it leaves your device only if you export it to a file yourself.</p>
+<p>The site also installs a small background script in your browser (a service worker) when you open any of its pages, whether or not you keep the offline copy. Without the copy it changes nothing, except that a page that cannot load shows a short notice; with the copy, it answers from the copy. It keeps nothing of its own.</p>
+<p>To delete what is stored, go to Settings: "Delete stored data" removes everything listed above except the offline copy itself and the note for the open tab, which goes when you close it; "Remove the offline copy" removes the copy and its records. Clearing this site's data in your browser's own settings removes all of it, the service worker included.</p>
+<h2 id="what-your-browser-sends-us">What your browser sends us</h2>
+<p>Ordpar does not count its readers or record what they look up. Apart from a request for a recording when you play one (see "Audio" below), a report of a mistake if you send one (see "Reporting a mistake" below) and your answers to the survey if you send them (see "The survey" below), your browser sends us nothing: not the pages you view, not what you search for, and not whether you install Ordpar as an app.</p>
+<h2 id="where-it-is-kept-and-for-how-long">Where it is kept, and for how long</h2>
+<p>The receiver is a small program of ours that Cloudflare runs for us (a Cloudflare Worker), at https://ordpar-receiver.ordpar.workers.dev. It runs at whichever of Cloudflare's locations your request reaches, which may be outside the EU. What it keeps is stored in Cloudflare's database service, in a database created in Cloudflare's EU jurisdiction, so its data is stored in the EU.</p>
+<p>We have turned off the request log that Cloudflare offers us for the receiver. Cloudflare itself keeps log data about the traffic on its network, as described under "Audio" below.</p>
+<p>Cloudflare keeps our database restorable to any minute of the last 7 days (its "Time Travel", which is always on), so a line we delete can still be restored by us for 7 days. Cloudflare does not say how long its own backups last.</p>
+<p>Cloudflare, Inc. is an American company. It handles this data for us as our processor, under the data processing addendum that is part of its terms. Cloudflare states that it is certified under the EU–US Data Privacy Framework, which covers transfers to the United States, and its addendum includes the EU's standard contractual clauses.</p>
+<h2 id="what-github-sees">What GitHub sees</h2>
+<p>The site's pages and files are served by GitHub Pages (GitHub, Inc., an American company), so GitHub receives your IP address and the address of each page and file your browser asks for. GitHub says that when a site it serves this way is visited, the visitor's IP address is logged and stored for security purposes. It does not say for how long, nor whether it does this for us or for itself. Its privacy statement says that for transfers out of the EU it generally relies on the EU's standard contractual clauses.</p>
+<p>To answer a search, your browser fetches from GitHub the parts of the dictionary's index named by its first few letters, the pages of the articles it shows, and often the word's own page (such as /bm-en/hus/). So unless you keep the offline copy, GitHub can tell which words and articles you look up. If you keep the offline copy, your searches and the articles you open are answered from your device instead, so GitHub does not see them; a recording you play is still fetched from our audio server, and the list of recordings it is found in from GitHub (see "Audio" below). By default the site also fetches an article, page or search when your pointer rests on its link, on a suggestion under the search box or on Random word, before you open it, and a recording when it rests on a sound icon; under Settings, "When a linked article or page is loaded" set to "When its link is clicked" fetches nothing before you click. If you have chosen to see a linked word's first Norwegian definition when the pointer rests on it, the site fetches the part of the index that holds it as soon as your pointer reaches the link, unless you have chosen "When its link is clicked". With JavaScript turned off, the search does not work, and your search is not sent anywhere. If you keep the offline copy, your browser asks GitHub whether there is a newer version while you use the site, at most once every 15 minutes.</p>
+<h2 id="audio">Audio</h2>
+<p>When you press a sound icon, or rest the pointer on one (unless you have chosen to load nothing before you click, see "What GitHub sees" above), your browser fetches the recording from Ordpar's audio server, a small program on Cloudflare's network. The request reaches Cloudflare like any request on the web, with your IP address; our program sets no cookie and keeps no logs of it, and we have turned off the request log that Cloudflare offers us for it. Cloudflare itself keeps log data about the traffic on its network, which can include IP addresses, in its data centres in the US and Europe "for a limited period of time"; it does not say how long. Cloudflare also keeps records of requests to our audio server, which we can see in our Cloudflare account for 32 days: each with the IP address, its country, the time, and which recording was asked for, and so which word. We do not copy or keep them.</p>
+<h2 id="reporting-a-mistake">Reporting a mistake</h2>
+<p>Under every article there is a button, "Suggest a correction". If you use it, your browser sends our receiver one message when you press Send, and only then: what you wrote, where you said the mistake is (if you chose), your email address (if you gave one), a name to credit (if you gave one), the article's number, and which version of the site is current when you send it. Nothing else goes with it: no cookie, no identifier, and not the address of the page you were on.</p>
+<p>The receiver stores the report with the day it arrived. It does not use or store your IP address or your browser's name for a report, though Cloudflare keeps records of requests to the receiver too, with their IP address and time, which we can see for 32 days, as for the audio server (see "Audio" above). To stop a flood of reports, it accepts at most 30 reports an hour from everyone together: for this it keeps only the number of reports that have arrived in the current hour, nothing about who sent them, and deletes that number once the hour is over. When the hour's number is reached, everyone who sends a report is asked to try again later.</p>
+<p>Robin reads the reports, to correct the dictionary. He may read a report with the help of an AI assistant (Claude, by Anthropic). The report's text then goes to Anthropic, which keeps the conversation for 30 days and does not use it to improve its AI models, except that it may use a conversation its safety systems flag for its safety work. Your email address and the name to credit are never shared with it. The reports are kept in Cloudflare's database service, in the EU (see "Where it is kept" above). We use your email address only to answer your report, and delete it once we have dealt with the report; like any deletion in that database, it can still be restored by us for 7 days after that. The rest of the report (the text, where the mistake is, the article, the day and the site's version) is kept after that, as our record of what readers have helped us correct, with no end date. Please do not write anything in a report that you would not want us to keep.</p>
+<p>The name to credit is optional, and only for our page <a href="https://ordpar.no/thanks/">Thanks to our readers</a>, which lists the fixes readers' reports have led to. If your report leads to a fix, or to an idea we take up, we may publish the name there with it, as you gave it or shortened; we never publish it otherwise, and we name nobody who did not give a name. When we have dealt with the report, the name is deleted from the receiver as your email address is, whether or not we published it; a published name is kept only in the lists behind that page. If you want your name taken off the page, write to post@ordpar.no, and we will take it off. If you send us an idea some other way, such as by mail or in a comment, and ask to be credited, we publish the name you give with the idea on the same page, and take it off whenever you ask.</p>
+<p>The legal basis is our legitimate interest in correcting the dictionary (GDPR Article 6(1)(f)); for your email address, your choice to give it so that we can answer you (GDPR Article 6(1)(a)); and for a name to credit, your consent, which you give by writing it in the field and can withdraw at any time (GDPR Article 6(1)(a)). You can ask us to see, correct or delete a report you sent, to delete your email address before we answer, or to take your name off the Thanks page, by writing to post@ordpar.no. Since we do not know who sent a report, tell us roughly when you sent it and what it said.</p>
+<h2 id="the-survey">The survey</h2>
+<p>The page "Ordpar — your first impressions", linked at the foot of every page, asks what you think of Ordpar. Every question is optional. If you fill it in, your browser sends our receiver one message when you press Send, and only then: your answers, and an email address or name if you gave one so that we can ask you a follow-up question. Nothing else goes with it: no cookie, no identifier, and not the address of the page you were on. As for a report, the receiver does not use or store your IP address or your browser's name, though Cloudflare keeps records of requests to it (see "Audio" above), and the limit of 30 an hour counts reports and answers together. The answers are kept in Cloudflare's database service, in the EU, as reports are (see "Where it is kept" above).</p>
+<p>Robin reads the answers, to improve Ordpar, and may go through them with the help of an AI assistant, as for reports (see "Reporting a mistake"); your email address or name is never shared with it. We use them only to ask you a follow-up question, and delete them once we have, or once we have decided not to; like any deletion in that database, they can still be restored by us for 7 days after that. The rest of your answers is kept with no end date, as our record of what readers have asked for. Please do not write anything you would not want us to keep.</p>
+<p>The legal basis is our legitimate interest in improving the dictionary (GDPR Article 6(1)(f)); for your email address or name, your choice to give it so that we can ask you a follow-up question (GDPR Article 6(1)(a)). You can ask us to see, correct or delete your answers, or to delete your email address or name before we use it, by writing to post@ordpar.no; tell us roughly when you sent them and what they said.</p>
+<h2 id="who-is-responsible">Who is responsible</h2>
+<p>Robin Fauskanger is responsible for this data (the controller), and can be reached at post@ordpar.no.</p>
+<p>Nothing here is required of you: the site works the same if your browser sends nothing. No decision about you is made from this data.</p>
+<h2 id="your-rights">Your rights</h2>
+<p>You can ask us what we hold about you, and have it corrected, deleted or its use restricted, or object to our use of it.</p>
+<p>You can complain to the Norwegian Data Protection Authority, Datatilsynet, or to the data protection authority where you live or work.</p>
+<h2 id="questions">Questions</h2>
+<p>To ask about this page or to use any of these rights, write to post@ordpar.no.</p>
+<p>If what we collect changes, this page will say so, with the date of the change.</p>
+</article>
+</main>
+<footer class="ordpar-footer">
+<div class="ordpar-footer-inner">
+<p class="ordpar-credit">Based on <a href="https://ordbokene.no/" rel="noopener">Bokmålsordboka</a> (UiB and Språkrådet) · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> · Ordpar is independent of both</p>
+<nav class="ordpar-footer-nav" aria-label="Site links"><a href="/">Home</a>
+<a href="/help/">Help</a>
+<a href="/more/">More ways to use Ordpar</a>
+<a href="/about/">About</a>
+<a href="/privacy/">Privacy</a></nav>
+<p class="ordpar-devnote">Under development: Ordpar is still being built, and its pages may change.</p>
+</div>
+</footer>
+<script src="/site/ordpar.js?v=ea0b1962e3" defer></script>
+</body>
+</html>

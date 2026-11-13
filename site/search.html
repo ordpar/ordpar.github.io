@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordpar — Norwegian–English dictionary</title>
+<meta name="description" content="Ordpar: a Norwegian–English dictionary built on Bokmålsordboka. Every article, in English where the translation is authored and in Norwegian where it is not.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="/site/shell-pages.css">
+</head>
+<body class="ordpar">
+
+<main id="ordpar-main" class="ordpar-main ordpar-main--cards" tabindex="-1">
+  <div class="ordpar-visually-hidden" data-ordpar-live data-nosnippet role="status" aria-live="polite"></div>
+  <div data-ordpar-results></div>
+</main>
+
+
+<script src="/site/inflection.js" defer></script>
+<script src="/site/article.js" defer></script>
+<script src="/site/mini.js" defer></script>
+<script src="/site/shell-pages.js"></script>
+<script>
+(function () {
+  'use strict';
+  var main = document.getElementById('ordpar-main');
+  ordparSearch.fragmentAddress();
+
+  function title(q) {
+    document.title = q ? q + ' — ' + ordparShell.t('site.name')
+                       : ordparShell.t('site.name') + ' — ' + ordparShell.t('site.tagline');
+  }
+
+  var seq = 0;
+  function run(q, push, record, drawn, en) {
+    var mine = ++seq;
+    en = !!en;
+    if (q && ordparShell.setDirection) { ordparShell.setDirection(en ? 'en' : 'nb', { quiet: true }); }
+    var show = function () {
+      title(q);
+      var box = document.getElementById('ordpar-q');
+      if (box && box.value !== q) { box.value = q; }
+      ordparSearch.render(main, q, { record: !!record, en: en });
+    };
+    if (!push) { show(); return; }
+    var state = drawn ? (en ? { q: q, random: true, en: true } : { q: q, random: true })
+      : en ? { q: q, search: true, en: true } : { q: q, search: true };
+    if (!q) { history.pushState(state, '', location.pathname); show(); return; }
+    title(q);
+    var box = document.getElementById('ordpar-q');
+    if (box && box.value !== q) { box.value = q; }
+    ordparSearch.searching(main, q);
+    (en ? Promise.resolve(ordparLookup.englishUrl(q)) : ordparLookup.address(q)).then(function (url) {
+      if (mine !== seq) { return; }
+      history.pushState(state, '', url);
+      show();
+    });
+  }
+
+  window.addEventListener('popstate', function () {
+    var q = ordparSearch.addressQuery();
+    run(q, false, false, false, ordparSearch.addressEnglish());
+  });
+
+  ordparSearch.wireFragmentLinks(function (q, how) { window.scrollTo(0, 0); run(q, true, true, false, !!(how && how.en)); });
+
+  function start() {
+    ordparShell.setSearchHandler(function (q, how) {
+      var drawn = !!(how && how.random);
+      run(q, true, !drawn, drawn, !!(how && how.en));
+    });
+    var english = ordparSearch.englishFromLocation && ordparSearch.englishFromLocation();
+    if (english) {
+      var drawnEn = ordparSearch.takeDrawn();
+      run(english, false, !drawnEn && !ordparSearch.cameByHistory(), drawnEn, true);
+      return;
+    }
+    var drawn = ordparSearch.takeDrawn();
+    var q = ordparSearch.queryFromLocation();
+    var back = ordparSearch.cameByHistory();
+    if (!q || back) { run(q, false, !drawn && !back); return; }
+    var before = seq;
+    ordparLookup.pageFor(q).then(function (url) {
+      if (seq !== before) { return; }
+      if (url) {
+        location.replace(url + '#q=' + encodeURIComponent(q.trim()) + (drawn ? ordparSearch.DRAWN_MARK : ''));
+        return;
+      }
+      run(q, false, !drawn);
+    });
+  }
+
+  function whenReady() {
+    (window.ordparShell.ready || Promise.resolve()).then(start);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', whenReady);
+  } else {
+    whenReady();
+  }
+}());
+</script>
+</body>
+</html>
