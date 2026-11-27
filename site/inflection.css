@@ -1,0 +1,166 @@
+.ordpar-inflection-tables {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9em;
+  margin: 0.6em 0 1.2em;
+  max-width: 100%;
+}
+
+.ordpar-infl-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.ordpar-infl-wrap--narrow { display: none; }
+
+@media (max-width: 48rem) {
+  .ordpar-infl-wrap--wide { display: none; }
+  .ordpar-infl-wrap--narrow { display: block; }
+}
+
+.ordpar-fit-wide .ordpar-infl-wrap--wide { display: block; }
+.ordpar-fit-wide .ordpar-infl-wrap--narrow { display: none; }
+.ordpar-fit-narrow .ordpar-infl-wrap--wide { display: none; }
+.ordpar-fit-narrow .ordpar-infl-wrap--narrow { display: block; }
+
+.ordpar-force-wide .ordpar-infl-wrap--wide { display: block; }
+.ordpar-force-wide .ordpar-infl-wrap--narrow { display: none; }
+.ordpar-force-narrow .ordpar-infl-wrap--wide { display: none; }
+.ordpar-force-narrow .ordpar-infl-wrap--narrow { display: block; }
+
+table.ordpar-infl {
+  border-collapse: collapse;
+  font-size: 0.95em;
+  line-height: 1.35;
+  max-width: 100%;
+}
+
+table.ordpar-infl--stacked {
+  width: min-content;
+}
+
+.ordpar-infl--wide .ordpar-form {
+  white-space: nowrap;
+}
+
+.ordpar-infl--wide .ordpar-form .ordpar-frame-after {
+  white-space: normal;
+}
+
+.ordpar-infl--wide .ordpar-col-whole,
+.ordpar-infl--wide .ordpar-col-whole .ordpar-th-label,
+.ordpar-infl--wide .ordpar-col-whole .ordpar-th-qual,
+.ordpar-infl--wide .ordpar-col-whole .ordpar-form .ordpar-frame-after {
+  white-space: nowrap;
+}
+
+table.ordpar-infl th,
+table.ordpar-infl td {
+  border: 1px solid #d6d6d6;
+  padding: 0.35em 0.7em;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.ordpar-infl th {
+  background: #f1f1f1;
+  color: inherit;
+  font-weight: 700;
+}
+
+.ordpar-infl .ordpar-th-label {
+  display: block;
+  font-weight: 700;
+}
+
+.ordpar-infl .ordpar-th-qual {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ordpar-infl .ordpar-corner {
+  color: #757070;
+  background: #f1f1f1;
+}
+
+.ordpar-infl .ordpar-th-group {
+  text-align: center;
+}
+
+.ordpar-infl .ordpar-th-row {
+  white-space: nowrap;
+}
+
+.ordpar-infl--narrow .ordpar-th-group {
+  text-align: center;
+}
+
+.ordpar-infl--narrow .ordpar-th-row {
+  white-space: normal;
+}
+
+table.ordpar-infl td {
+  background: transparent;
+  color: inherit;
+}
+
+.ordpar-infl .ordpar-frame {
+  color: #757070;
+  font-style: italic;
+}
+
+.ordpar-pframes-off .ordpar-infl .ordpar-frame--participle {
+  display: none;
+}
+
+.ordpar-infl .ordpar-unknown {
+  outline: 2px dotted #b3261e;
+  outline-offset: -2px;
+}
+
+.ordpar-infl th.ordpar-unknown .ordpar-th-label {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.85em;
+}
+
+.ordpar-infl .ordpar-vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.nightMode table.ordpar-infl th,
+.nightMode table.ordpar-infl td {
+  border-color: #656161;
+}
+
+.nightMode table.ordpar-infl th {
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.nightMode table.ordpar-infl td {
+  color: #d9d6d6;
+}
+
+.nightMode .ordpar-infl .ordpar-corner {
+  color: #b9b6b6;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nightMode .ordpar-infl .ordpar-frame {
+  color: #b9b6b6;
+}
+
+.nightMode .ordpar-infl .ordpar-unknown {
+  outline-color: var(--ordpar-tint, #e3b7c9);
+}
